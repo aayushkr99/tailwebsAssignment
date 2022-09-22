@@ -9,7 +9,6 @@ exports.createUser = async function (req, res){
         const userData = {
             USERNAME: req.body.USERNAME,
             CONTACT_NUMBER : req.body.CONTACT_NUMBER,
-            // PASSWORD : req.body.PASSWORD,
             PASSWORD : hashedPassword,
             CREATE_DATE_TIME : req.body.CREATE_DATE_TIME
         }
@@ -27,7 +26,7 @@ exports.findUser = async function(req, res){
     try{
       
           let getUser = await User.findAll({
-            order : [["CREATE_DATE_TIME", "DESC"]]
+            order : [["CREATE_DATE_TIME", "DESC"]] 
           });
 
         res.status(200).send({status : true, data : getUser})

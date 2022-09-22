@@ -13,6 +13,7 @@ const User = sequelize.define("createUser", {
     USERNAME: {
         type : Sequelize.STRING,
         allowNull : false,
+        unique : true
 
     },
     CONTACT_NUMBER : {

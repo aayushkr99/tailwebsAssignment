@@ -2,8 +2,7 @@ const Sequelize = require("sequelize");
 
 const sequelize = require("../util/database");
 
-const User = sequelize.define("createUser", {
-    
+const result = sequelize.define("marksheet", {
     id: {
         type : Sequelize.INTEGER,
         allowNull : false,
@@ -12,20 +11,24 @@ const User = sequelize.define("createUser", {
         primaryKey : true
     },
 
-    UserName : {
+    Name : {
         type : Sequelize.STRING,
         allowNull : false,
 
     },
 
-    Password : {
+    Subject : {
         type : Sequelize.STRING,
         allowNull : false,
-
     },
 
+    Marks : {
+        type  : Sequelize.INTEGER,
+        allowNull : false,
+
+    }
 }, {
     timestamps : false
 });
 
-module.exports = User;
+module.exports = result;
